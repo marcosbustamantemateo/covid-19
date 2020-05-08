@@ -46,7 +46,7 @@ const Map = ( props ) => {
 
   return (
     <div className={mapClassName}>
-      <BaseMap ref={mapRef} {...mapSettings}>
+      <BaseMap ref={mapRef} {...mapSettings} bounds={[[64, -19], [40, -5]]}>
         { children }
         { basemap && <TileLayer {...basemap} noWrap={true} minZoom={0} /> }
         <ZoomControl position="bottomright" />

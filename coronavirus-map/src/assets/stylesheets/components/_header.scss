@@ -2,36 +2,111 @@ header {
 
   width: 100%;
   color: $white;
-  background-color: $gatsby-purple;
+  background: $purple-modified;
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    height: 2.5em;
-    line-height: 2.5em;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-  }
-
-  a {
-    display: block;
-    color: lighten($gatsby-purple, 50);
-    text-decoration: none;
-    padding: 0 .5em;
-  }
-
-  p {
-    font-size: 1.2em;
+  @keyframes bugfix { from {padding:0;} to {padding:0;}}
+  @-webkit-keyframes bugfix { from {padding:0;} to {padding:0;}}
+  
+  p{
     font-weight: bold;
-    margin: 0;
   }
+  
+  #overlay-button {
+    position: absolute;
+    right: 1em;
+    top: 0em;
+    padding: 26px 11px;
+    z-index: 5;
+    cursor: pointer;
+    user-select: none;
+    span {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: white;
+        position: relative;
+        display: block;
+        transition: all .2s ease-in-out;
+        &:before {
+          top: -10px;
+          visibility: visible;
+        }
+        &:after {
+          top: 10px;
+        }
+        &:before, &:after {
+            height: 4px;
+            width: 35px;
+            border-radius: 2px;
+            background-color: white;
+            position: absolute;
+            content: "";
+            transition: all .2s ease-in-out;
+        }
+      }
+      &:hover span, &:hover span:before, &:hover span:after {
+
+      }
+  }
+  
+  input[type=checkbox] {
+    display: none;
+  }
+  
+  input[type=checkbox]:checked ~ #overlay {
+    visibility: visible;
+  }
+  
+  input[type=checkbox]:checked ~ #overlay-button {
+    &:hover span, span{
+      background: transparent;
+    }
+    span {
+      &:before {
+        transform: rotate(45deg) translate(7px, 7px);
+        opacity: 1;
+      }
+      &:after {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+  }
+  
+  #overlay {
+    height: 100%;
+    z-index: 2;
+    visibility: hidden;
+    position: fixed;
+    right: 0;
+    &.active {
+      visibility: visible;
+    }
+    ul {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: left;
+      height: 100%;
+      padding-left: 0;
+      list-style-type: none;
+      a {
+        color: black;
+        text-decoration: none;
+        font-size: 1.25em;
+
+        li {
+          background: white;
+          padding: 2em;
+          border: 1px solid black;
+          &:hover {
+            background-color: gray;
+            color: white;
+          }        
+        }
+      }
+           
+    }
+  }
+  
 
 }

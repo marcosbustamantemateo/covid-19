@@ -22,3 +22,39 @@ body {
 main {
   padding: 2em 0;
 }
+
+.country-info {
+  text-align: left;
+}
+
+.filtering {
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 264px;
+  padding: 5px;
+  margin-bottom: 10px;
+  box-shadow: 3px 3px 5px #ccc;
+}
+
+.filtering * {
+  margin: 5px;
+  text-align: left;
+}
+
+.filtering input, select {
+  width: 138px;
+}
+
+.filtering label {
+  width: 68.48px;
+  display: inline-block;
+}
+
+.img-flag-card {
+  display: inline-block;
+  width: 200px;
+  height: 120px;
+  box-shadow: 3px 3px 5px #ccc;
+  -webkit-box-shadow: 3px 3px 1px #ccc;
+}

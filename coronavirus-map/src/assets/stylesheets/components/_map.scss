@@ -1,6 +1,6 @@
 .map {
 
-  position: relative;
+  position: fixed;
   &,
   .map-base {
     width: 100%;
@@ -48,20 +48,32 @@
   background-color: $red-800;
   border-radius: 100%;
   box-shadow: 0 2px 5px rgba(black, .9);
+}
 
-  &:active, &:hover, &:focus {
+.clase {
+  display: block;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 3.6em;
+  height: 3.6em;
+  font-size: .7em;
+  font-weight: bold;
+  background-color: $red-800;
+  border-radius: 100%;
+  box-shadow: 0 2px 5px rgba(black, .9);
+} 
 
-    .icon-marker-tooltip {
-      display: block;
-    }
+.open {
+  display: block;
+}
 
-  }
-
+.close {
+  display: none;
 }
 
 .icon-marker-tooltip {
-
-  display: none;
   position: absolute;
   bottom: 100%;
   width: 16em;
