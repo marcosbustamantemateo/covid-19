@@ -9,7 +9,7 @@ export const mapServices = [
 class _mapServices {
 
   static fetchCountries = () => {
-      return fetch('https://corona.lmao.ninja/v2/countries')
+      return fetch('https://disease.sh/v3/covid-19/countries')
         .then(response => response.json())
         .then(data => { return data; })
         .catch(error => { return error; });
